@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shop Điện Thoại - Mẫu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="logo">
+        <div class="mark">TG</div>
+        <div>
+          <h1>Shop (mẫu)</h1>
+          <div class="muted">Bán điện thoại &amp; phụ kiện</div>
+        </div>
+      </div>
+
+      <div class="search">
+        <input id="searchInput" placeholder="Tìm điện thoại, ví dụ: iPhone 14, Samsung A54..." />
+        <button id="btnSearch">Tìm kiếm</button>
+      </div>
+
+      <div class="actions">
+        <button class="icon-btn">Đăng nhập</button>
+        <button class="icon-btn">Đăng ký</button>
+        <div class="cart-bubble" id="cartCount">0</div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app">
+    <div class="container">
+      <aside class="sidebar">
+        <div class="filter-group">
+          <h4>Thương hiệu</h4>
+          <div class="brands" id="brandList"></div>
+        </div>
+        <div class="filter-group">
+          <h4>Khoảng giá (VND)</h4>
+          <div class="range-row">
+            <input id="minPrice" placeholder="Min" />
+            <input id="maxPrice" placeholder="Max" />
+          </div>
+          <div style="margin-top:8px"><button id="applyPrice" class="btn btn-outline">Áp dụng</button></div>
+        </div>
+        <div class="filter-group">
+          <h4>Sắp xếp</h4>
+          <select id="sortSelect" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eee">
+            <option value="new">Mới nhất</option>
+            <option value="price-asc">Giá: Thấp → Cao</option>
+            <option value="price-desc">Giá: Cao → Thấp</option>
+            <option value="popular">Bán chạy</option>
+          </select>
+        </div>
+      </aside>
+
+      <section>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <h2>Sản phẩm</h2>
+          <div class="muted" id="resultInfo">0 sản phẩm</div>
+        </div>
+
+        <div class="products" id="productGrid"></div>
+      </section>
+    </div>
+
+    <footer>
+      <div>© 2025 Shop Mẫu — Thiết kế demo giống giao diện bán lẻ</div>
+    </footer>
+
+    <!-- Giỏ hàng (ẩn nếu rỗng) -->
+    <div id="cartDrawer" class="cart-drawer" style="display:none">
+      <h3>Giỏ hàng</h3>
+      <div id="cartItems"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="muted">Tổng:</div>
+        <div id="cartTotal" style="font-weight:700"></div>
+      </div>
+      <button class="checkout">Thanh toán</button>
+    </div>
+
+    <!-- Hộp thoại chi tiết sản phẩm -->
+    <div id="overlay" style="display:none" class="overlay">
+      <div class="modal" role="dialog">
+        <div>
+          <img id="modalImg" src="" alt="" />
+        </div>
+        <div class="meta">
+          <h3 id="modalTitle"></h3>
+          <div class="muted" id="modalBrand"></div>
+          <div class="price" id="modalPrice"></div>
+          <div id="modalDesc" class="muted"></div>
+
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button id="addToCartModal" class="btn btn-primary">Thêm vào giỏ</button>
+            <button id="closeModal" class="btn btn-outline">Đóng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
